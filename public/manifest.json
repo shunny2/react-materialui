@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React App with MaterialUI",
+  "name": "Create React App With MaterialUI Sample",
   "icons": [
     {
       "src": "favicon.ico",
