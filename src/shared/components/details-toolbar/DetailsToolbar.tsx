@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-import { Button, Divider, Icon, Paper, Skeleton, useTheme } from '@mui/material';
+import { Button, Divider, Icon, Paper, Skeleton, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 interface IDetailsToolbarProps {
   textNewButton?: string;
@@ -45,6 +45,8 @@ export const DetailsToolbar = ({
   onClickSaveAndReturnButton
 }: IDetailsToolbarProps) => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box
@@ -67,13 +69,15 @@ export const DetailsToolbar = ({
           onClick={onClickSaveButton}
           startIcon={<Icon>save</Icon>}
         >
-          Save
+          <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
+            Save
+          </Typography>
         </Button>
       )}
 
       {showSaveButtonLoading && (<Skeleton width={110} height={60} />)}
 
-      {(showSaveAndReturnButton && !showSaveAndReturnButtonLoading) && (
+      {(showSaveAndReturnButton && !showSaveAndReturnButtonLoading && !smDown && !mdDown) && (
         <Button
           color='primary'
           disableElevation
@@ -81,11 +85,13 @@ export const DetailsToolbar = ({
           onClick={onClickSaveAndReturnButton}
           startIcon={<Icon>save</Icon>}
         >
-          Save and return
+          <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
+            Save and return
+          </Typography>
         </Button>
       )}
 
-      {showSaveAndReturnButtonLoading && (<Skeleton width={180} height={60} />)}
+      {(showSaveAndReturnButtonLoading && !smDown) && (<Skeleton width={180} height={60} />)}
 
       {(showDeleteButton && !showDeleteButtonLoading) && (
         <Button
@@ -95,13 +101,15 @@ export const DetailsToolbar = ({
           onClick={onClickDeleteButton}
           startIcon={<Icon>delete</Icon>}
         >
-          Delete
+          <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
+            Delete
+          </Typography>
         </Button>
       )}
 
       {showDeleteButtonLoading && (<Skeleton width={110} height={60} />)}
 
-      {(showNewButton && !showNewButtonLoading) && (
+      {(showNewButton && !showNewButtonLoading && !smDown) && (
         <Button
           color='primary'
           disableElevation
@@ -109,24 +117,30 @@ export const DetailsToolbar = ({
           onClick={onClickNewButton}
           startIcon={<Icon>add</Icon>}
         >
-          {textNewButton}
+          <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
+            {textNewButton}
+          </Typography>
         </Button>
       )}
 
-      {showNewButtonLoading && (<Skeleton width={110} height={60} />)}
-
-      <Divider variant='middle' orientation='vertical' />
+      {(showNewButtonLoading && !smDown) && (<Skeleton width={110} height={60} />)}
 
       {(showBackButton && !showBackButtonLoading) && (
-        <Button
-          color='primary'
-          disableElevation
-          variant='outlined'
-          onClick={onClickBackButton}
-          startIcon={<Icon>arrow_back</Icon>}
-        >
-          Back
-        </Button>
+        <>
+          <Divider variant='middle' orientation='vertical' />
+          
+          <Button
+            color='primary'
+            disableElevation
+            variant='outlined'
+            onClick={onClickBackButton}
+            startIcon={<Icon>arrow_back</Icon>}
+          >
+            <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
+              Back
+            </Typography>
+          </Button>
+        </>
       )}
 
       {showBackButtonLoading && (<Skeleton width={110} height={60} />)}
