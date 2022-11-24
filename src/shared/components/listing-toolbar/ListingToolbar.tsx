@@ -5,6 +5,7 @@ interface IListingToolbarProps {
   textSearch?: string;
   showInputSearch?: boolean;
   onChangeTextSearch?: (newText: string) => void;
+
   textNewButton?: string;
   showNewButton?: boolean;
   onClickNewButton?: () => void;
@@ -14,6 +15,7 @@ export const ListingToolbar = ({
   textSearch = '',
   showInputSearch = false,
   onChangeTextSearch,
+  
   textNewButton = 'New',
   showNewButton = true,
   onClickNewButton
