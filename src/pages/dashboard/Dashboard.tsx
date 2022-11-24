@@ -1,5 +1,5 @@
 import { BaseLayout } from '../../shared/layouts';
-import { ListingToolbar } from '../../shared/components';
+import { DetailsToolbar, ListingToolbar } from '../../shared/components';
 
 export const Dashboard = () => {
 
@@ -7,7 +7,8 @@ export const Dashboard = () => {
     <BaseLayout 
       title='Initial Page' 
       toolbar={(
-        <ListingToolbar showInputSearch />
+        // <ListingToolbar showInputSearch />
+        <DetailsToolbar showSaveAndReturnButton />
       )}
     >
 
