@@ -1,6 +1,8 @@
 import { Box } from '@mui/system';
 import { Button, Icon, Paper, TextField, useTheme } from '@mui/material';
 
+import { Environment } from '../../environment';
+
 interface IListingToolbarProps {
   textSearch?: string;
   showInputSearch?: boolean;
@@ -39,8 +41,8 @@ export const ListingToolbar = ({
         <TextField
           size='small'
           value={textSearch}
+          placeholder={Environment.INPUT_SEARCH}
           onChange={(e) => onChangeTextSearch?.(e.target.value)}
-          placeholder='Search...'
         />
       )}
 
