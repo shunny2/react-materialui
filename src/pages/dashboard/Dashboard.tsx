@@ -5,7 +5,7 @@ export const Dashboard = () => {
 
   return (
     <BaseLayout 
-      title='Initial Page' 
+      title='Home' 
       toolbar={(
         // <ListingToolbar showInputSearch />
         <DetailsToolbar showSaveAndReturnButton />
