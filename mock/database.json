@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Cleiton",
-      "lastName": "Rasta"
+      "lastName": "Rasta",
+      "fullName": "Cleiton Rasta"
     }
   ]
 }
