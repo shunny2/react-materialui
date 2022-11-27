@@ -2,8 +2,8 @@
   "peoples": [
     {
       "id": 1,
-      "name": "Cleiton",
-      "lastName": "Rasta",
+      "email": "Cleiton_rasta@gmail.com",
+      "cityId": 1,
       "fullName": "Cleiton Rasta"
     }
   ]
