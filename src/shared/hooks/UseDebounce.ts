@@ -1,5 +1,11 @@
 import { useCallback, useRef } from 'react';
 
+/**
+ * This hook is responsible for preventing many database queries.
+ * @param delay number
+ * @param notDelayInFirstTime boolean
+ * @returns void
+ */
 export const useDebounce = (delay = 1000, notDelayInFirstTime = true) => {
   const isFirstTime = useRef(notDelayInFirstTime);
   const debouncing = useRef<NodeJS.Timeout>();
@@ -9,7 +15,7 @@ export const useDebounce = (delay = 1000, notDelayInFirstTime = true) => {
       isFirstTime.current = false;
       func();
     } else {
-      // If a debouncing is already registered, cancel the timeout and add another timeout that waits for 1s.
+      // If there is already a debouncing (function) registered, and it is executed again, cancel the timeout and add another timeout that waits for 1s.
       if (debouncing.current)
         clearTimeout(debouncing.current);
 
