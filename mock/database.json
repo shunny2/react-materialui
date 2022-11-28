@@ -2,9 +2,33 @@
   "peoples": [
     {
       "id": 1,
-      "email": "Cleiton_rasta@gmail.com",
       "cityId": 1,
+      "email": "Cleiton_rasta@gmail.com",
       "fullName": "Cleiton Rasta"
+    },
+    {
+      "id": 2,
+      "cityId": 1,
+      "email": "Ruan_rasta@gmail.com",
+      "fullName": "Ruan Rasta"
+    },
+    {
+      "id": 3,
+      "cityId": 1,
+      "email": "Breno_rasta@gmail.com",
+      "fullName": "Breno Rasta"
+    },
+    {
+      "id": 4,
+      "cityId": 1,
+      "email": "Batoré_rasta@gmail.com",
+      "fullName": "Batoré Rasta"
+    },
+    {
+      "id": 5,
+      "cityId": 1,
+      "email": "Maomé_rasta@gmail.com",
+      "fullName": "Maomé Rasta"
     }
   ]
 }

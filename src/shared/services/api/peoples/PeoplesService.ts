@@ -1,14 +1,14 @@
 import { Environment } from '../../../environment';
 import { Api } from '../axios';
 
-interface IPeoplesListing {
+export interface IPeoplesListing {
   id: number;
   email: string;
   cityId: number;
   fullName: string;
 }
 
-interface IPeoplesDetails {
+export interface IPeoplesDetails {
   id: number;
   email: string;
   cityId: number;
