@@ -1,16 +1,17 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
 
 import { BaseLayout } from '../../shared/layouts';
 import { ListingToolbar } from '../../shared/components';
-import { IPeoplesListing, PeoplesService } from '../../shared/services/api/peoples/PeoplesService';
 import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
+import { IPeoplesListing, PeoplesService } from '../../shared/services/api/peoples/PeoplesService';
 
 export const ListingPeople = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
+  const navigate = useNavigate();
 
   const [rows, setRows] = useState<IPeoplesListing[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -20,11 +21,15 @@ export const ListingPeople = () => {
     return searchParams.get('search') || '';
   }, [searchParams]);
 
+  const page = useMemo(() => {
+    return Number(searchParams.get('page') || '1');
+  }, [searchParams]);
+
   useEffect(() => {
     setIsLoading(true);
 
     debounce(() => {
-      PeoplesService.getAll(1, search)
+      PeoplesService.getAll(page, search)
         .then((result) => {
           setIsLoading(false);
 
@@ -35,7 +40,20 @@ export const ListingPeople = () => {
           setRows(result.data);
         });
     });
-  }, [search]);
+  }, [page, search]);
+
+  const handleDelete = (id: number) => {
+    if (confirm('Do you want to delete this record?'))
+      PeoplesService.deleteById(id)
+        .then((result) => {
+          if (result instanceof Error)
+            alert(result.message);
+          else
+            setRows(oldRows => [
+              ...oldRows.filter(oldRow => oldRow.id !== id)
+            ]);
+        });
+  };
 
   return (
     <BaseLayout
@@ -44,7 +62,7 @@ export const ListingPeople = () => {
         <ListingToolbar
           showInputSearch
           textSearch={search}
-          onChangeTextSearch={text => setSearchParams({ search: text }, { replace: true })}
+          onChangeTextSearch={text => setSearchParams({ search: text, page: '1' }, { replace: true })}
         />
       }
     >
@@ -61,7 +79,14 @@ export const ListingPeople = () => {
             {!isLoading && rows.map(row => {
               return (
                 <TableRow key={row.id}>
-                  <TableCell>Buttons</TableCell>
+                  <TableCell sx={{ p: 1.2 }}>
+                    <IconButton title='delete' size='small' onClick={() => handleDelete(row.id)}>
+                      <Icon color='error'>delete</Icon>
+                    </IconButton>
+                    <IconButton title='edit' size='small' onClick={() => navigate(`/people/details/${row.id}`)}>
+                      <Icon color='primary'>edit</Icon>
+                    </IconButton>
+                  </TableCell>
                   <TableCell>{row.fullName}</TableCell>
                   <TableCell>{row.email}</TableCell>
                 </TableRow>
@@ -78,6 +103,18 @@ export const ListingPeople = () => {
               <TableRow>
                 <TableCell colSpan={3}>
                   <LinearProgress variant='indeterminate' />
+                </TableCell>
+              </TableRow>
+            )}
+            {(totalCount > 0 && totalCount > Environment.LINE_LIMIT) && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <Pagination
+                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    page={page}
+                    count={Math.ceil(totalCount / Environment.LINE_LIMIT)}
+                    onChange={(_, newPage) => setSearchParams({ search, page: newPage.toString() }, { replace: true })}
+                  />
                 </TableCell>
               </TableRow>
             )}
