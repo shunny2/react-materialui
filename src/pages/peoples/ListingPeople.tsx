@@ -62,6 +62,7 @@ export const ListingPeople = () => {
         <ListingToolbar
           showInputSearch
           textSearch={search}
+          onClickNewButton={() => navigate('/people/details/new')}
           onChangeTextSearch={text => setSearchParams({ search: text, page: '1' }, { replace: true })}
         />
       }
