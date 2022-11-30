@@ -20,11 +20,13 @@ interface IThemeProviderProps {
 }
 
 export const AppThemeProvider = ({ children }: IThemeProviderProps) => {
-  const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
+  const [themeName, setThemeName] = useState<'light' | 'dark'>(localStorage.getItem('theme') !== 'dark' ? 'light' : 'dark');
 
   const toggleTheme = useCallback(() => {
     setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
   }, []);
+  
+  localStorage.setItem('theme', themeName);
 
   const theme = useMemo(() => {
     if (themeName === 'light')
