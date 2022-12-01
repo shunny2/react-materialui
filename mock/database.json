@@ -2,9 +2,9 @@
   "peoples": [
     {
       "id": 1,
-      "cityId": 1,
+      "fullName": "Cleiton Rasta",
       "email": "Cleiton_rasta@gmail.com",
-      "fullName": "Cleiton Rasta"
+      "cityId": 1
     },
     {
       "id": 2,
@@ -80,15 +80,15 @@
     },
     {
       "id": 16,
+      "cityId": "2",
       "fullName": "Bruno Rasta",
-      "email": "Bruno_rasta@gmail.com",
-      "cityId": "2"
+      "email": "Bruno_rasta@gmail.com"
     },
     {
-      "fullName": "Pedro Rasta",
+      "id": 17,
+      "cityId": 3,
       "email": "Pedro_rasta@gmail.com",
-      "cityId": "3",
-      "id": 17
+      "fullName": "Pedro Rasta"
     }
   ]
 }
