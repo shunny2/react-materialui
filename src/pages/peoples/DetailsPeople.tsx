@@ -1,14 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Grid, LinearProgress, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core';
 
 import { DetailsToolbar } from '../../shared/components';
 import { BaseLayout } from '../../shared/layouts';
 import { PeoplesService } from '../../shared/services/api/peoples/PeoplesService';
-import { VTextField } from '../../shared/forms';
+import { VTextField, VForm, useVForm } from '../../shared/forms';
 
 interface IFormData {
   email: string;
@@ -19,8 +17,7 @@ interface IFormData {
 export const DetailsPeople = () => {
   const { id = 'new' } = useParams<'id'>();
   const navigate = useNavigate();
-
-  const formRef = useRef<FormHandles>(null);
+  const { formRef, save, saveAndClose, isSaveAndClose } = useVForm();
 
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState('');
@@ -41,6 +38,12 @@ export const DetailsPeople = () => {
             formRef.current?.setData(result);
           }
         });
+    } else {
+      formRef.current?.setData({
+        fullName: '',
+        email: '',
+        cityId: ''
+      });
     }
   }, [id]);
 
@@ -54,8 +57,12 @@ export const DetailsPeople = () => {
 
           if (result instanceof Error)
             alert(result.message);
-          else
-            navigate(`/people/details/${result}`);
+          else {
+            if (isSaveAndClose())
+              navigate('/people');
+            else
+              navigate(`/people/details/${result}`);
+          }
         });
     } else {
       PeoplesService.updateById(Number(id), { id: Number(id), ...data })
@@ -64,6 +71,10 @@ export const DetailsPeople = () => {
 
           if (result instanceof Error)
             alert(result.message);
+          else {
+            if (isSaveAndClose())
+              navigate('/people');
+          }
         });
     }
   };
@@ -88,19 +99,15 @@ export const DetailsPeople = () => {
           showDeleteButton={id !== 'new'}
           showSaveAndReturnButton
 
-          onClickNewButton={() => navigate('/people/details/new')}
-          onClickSaveButton={() => formRef.current?.submitForm()}
+          onClickSaveButton={save}
+          onClickSaveAndReturnButton={saveAndClose}
           onClickBackButton={() => navigate('/people')}
           onClickDeleteButton={() => handleDelete(Number(id))}
-          onClickSaveAndReturnButton={() => formRef.current?.submitForm()}
+          onClickNewButton={() => navigate('/people/details/new')}
         />
       }
     >
-
-
-
-
-      <Form ref={formRef} onSubmit={handleSave}>
+      <VForm ref={formRef} onSubmit={handleSave}>
         <Box component={Paper} variant='outlined' sx={{ margin: 1, display: 'flex', flexDirection: 'column' }}>
           <Grid container direction='column' padding={2} spacing={2}>
 
@@ -150,7 +157,7 @@ export const DetailsPeople = () => {
 
           </Grid>
         </Box>
-      </Form>
+      </VForm>
     </BaseLayout>
   );
 };

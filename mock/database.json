@@ -79,10 +79,16 @@
       "fullName": "Vitor Rasta"
     },
     {
-      "fullName": "Bruno Lima",
-      "email": "Bruno_lima@gmail.com",
-      "cityId": "2",
-      "id": 16
+      "id": 16,
+      "fullName": "Bruno Rasta",
+      "email": "Bruno_rasta@gmail.com",
+      "cityId": "2"
+    },
+    {
+      "fullName": "Pedro Rasta",
+      "email": "Pedro_rasta@gmail.com",
+      "cityId": "3",
+      "id": 17
     }
   ]
 }
