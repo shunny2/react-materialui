@@ -1,3 +1,5 @@
 export * from './dashboard/Dashboard';
-export * from './peoples/ListingPeople';
-export * from './peoples/DetailsPeople';
+export * from './cities/ListingCities';
+export * from './cities/DetailsCities';
+export * from './people/ListingPeople';
+export * from './people/DetailsPeople';

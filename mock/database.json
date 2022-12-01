@@ -1,5 +1,5 @@
 {
-  "peoples": [
+  "people": [
     {
       "id": 1,
       "fullName": "Cleiton Rasta",
@@ -80,15 +80,81 @@
     },
     {
       "id": 16,
-      "cityId": "2",
-      "fullName": "Bruno Rasta",
-      "email": "Bruno_rasta@gmail.com"
+      "cityId": 2,
+      "email": "Brow_rasta@gmail.com",
+      "fullName": "Brow Rasta"
     },
     {
       "id": 17,
-      "cityId": 3,
-      "email": "Pedro_rasta@gmail.com",
-      "fullName": "Pedro Rasta"
+      "fullName": "Jeferson Rasta",
+      "email": "Jeferson_rasta@gmail.com",
+      "cityId": 3
+    }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "São Paulo"
+    },
+    {
+      "id": 2,
+      "name": "Rio de Janeiro"
+    },
+    {
+      "id": 3,
+      "name": "Brasília"
+    },
+    {
+      "id": 4,
+      "name": "Salvador"
+    },
+    {
+      "id": 6,
+      "name": "Fortaleza"
+    },
+    {
+      "id": 7,
+      "name": "Belo Horizonte"
+    },
+    {
+      "id": 8,
+      "name": "Manaus"
+    },
+    {
+      "id": 9,
+      "name": "Curitiba"
+    },
+    {
+      "id": 10,
+      "name": "Recife"
+    },
+    {
+      "id": 12,
+      "name": "Goiânia"
+    },
+    {
+      "id": 13,
+      "name": "Belém"
+    },
+    {
+      "id": 14,
+      "name": "Porto Alegre"
+    },
+    {
+      "id": 15,
+      "name": "Guarulhos"
+    },
+    {
+      "id": 16,
+      "name": "Campinas"
+    },
+    {
+      "id": 17,
+      "name": "Aracaju"
+    },
+    {
+      "name": "São João da Boa Vista",
+      "id": 18
     }
   ]
 }
