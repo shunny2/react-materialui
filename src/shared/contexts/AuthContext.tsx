@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
     const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
 
     if (accessToken)
-      setAccessToken(JSON.parse(accessToken));
+      setAccessToken(JSON.stringify(accessToken));
     else
       setAccessToken(undefined);
   }, []);

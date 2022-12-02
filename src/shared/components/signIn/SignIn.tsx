@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react';
 import { Box } from '@mui/system';
-import { Button, Card, CardActions, CardContent, CircularProgress, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CircularProgress, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as yup from 'yup';
 
 import { useAuthContext } from '../../contexts';
@@ -27,6 +27,9 @@ interface ISignInProps {
 }
 
 export const SignIn = ({ children }: ISignInProps) => {
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+
   const { isAuthenticated, signIn } = useAuthContext();
   const { formRef } = useVForm();
 
@@ -38,13 +41,14 @@ export const SignIn = ({ children }: ISignInProps) => {
     signInSchema
       .validate(data, { abortEarly: false })
       .then((validatedData) => {
-        setIsLoading(true);
         signIn(validatedData)
           .then(() => {
             setIsLoading(false);
           });
       })
       .catch((errors: yup.ValidationError) => {
+        setIsLoading(false);
+
         const validationErrors: IVFormErrors = {};
 
         errors.inner.forEach((error) => {
@@ -79,7 +83,7 @@ export const SignIn = ({ children }: ISignInProps) => {
       <VForm ref={formRef} onSubmit={handleSubmit}>
         <Card>
           <CardContent>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: '250' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: smDown ? 300 : 600, height: 220 }}>
               <Typography variant='h6' align='center'>Login</Typography>
 
               <VTextField
