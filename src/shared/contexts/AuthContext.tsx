@@ -1,10 +1,10 @@
-import { createContext, ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
-import { AuthService } from '../services/api/auth/AuthService';
+import { AuthService, IUserAuthProps } from '../services/api/auth/AuthService';
 
 interface IAuthContextData {
   isAuthenticated: boolean;
-  signIn: (email: string, password: string) => Promise<string | void>;
+  signIn: (userData: IUserAuthProps) => Promise<string | void>;
   logout: () => void;
 }
 
@@ -30,8 +30,8 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
 
   const isAuthenticated = useMemo(() => !!accessToken, [accessToken]);
 
-  const handleSignIn = useCallback(async (email: string, password: string) => {
-    const result = await AuthService.auth(email, password);
+  const handleSignIn = useCallback(async (userData: IUserAuthProps) => {
+    const result = await AuthService.auth(userData);
 
     if (result instanceof Error)
       return result.message;
@@ -53,3 +53,5 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
     </AuthContext.Provider>
   );
 };
+
+export const useAuthContext = () => useContext(AuthContext);

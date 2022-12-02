@@ -4,10 +4,15 @@ interface IAuth {
   accessToken: string;
 }
 
-const auth = async (email: string, password: string): Promise<IAuth | Error> => {
-  try {
-    const { data } = await Api.get<IAuth>('/auth', { data: { email, password } });
+export interface IUserAuthProps {
+  email: string;
+  password: string;
+}
 
+const auth = async (userData: IUserAuthProps): Promise<IAuth | Error> => {
+  try {
+    const { data } = await Api.post<IAuth>('/auth', userData);
+ 
     if (data)
       return data;
 
@@ -18,5 +23,5 @@ const auth = async (email: string, password: string): Promise<IAuth | Error> => 
 };
 
 export const AuthService = {
-  auth
+  auth,
 };

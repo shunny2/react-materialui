@@ -164,6 +164,7 @@
     }
   ],
   "auth": {
-    "accessToken": "n2k1jn4i214nk2j4nk24"
+    "email": "alexander@gmail.com",
+    "password": "12345678"
   }
 }
