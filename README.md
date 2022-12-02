@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="#about-application">About Application</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technologies">Technologies</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-run">How to Run</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="project-status">Project Status</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</br>
 
-## Available Scripts
+![gif](https://user-images.githubusercontent.com/72872854/205369416-5ea01006-5dc2-4a96-b962-7f5262404e47.gif)
 
-In the project directory, you can run:
+<p align="center">
+<a href="https://img.shields.io/github/watchers/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/watchers/shunny2/react-materialui?style=social" alt="Watchers"/></a>
+<a href="https://img.shields.io/github/stars/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?style=social" alt="Repo Stars"/></a>
+<a href="https://img.shields.io/github/license/shunny2/react-materialui"><img src="https://img.shields.io/github/license/shunny2/react-materialui" alt="License"/></a>
+</p>
 
-### `npm start`
+## About Application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Web application to build an administrative panel from scratch using react and typescript.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+<table>
+  <thead>
+  </thead>
+  <tbody>
+    <td>
+      <a href="https://nodejs.org/en/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React logo image." /></a>
+    </td>
+    <td>
+      <a href="https://expressjs.com/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg" alt="Typescript logo image." /></a>
+    </td>
+    <td>
+      <a href="https://swagger.io/"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" alt="Material UI logo image." /></a>
+    </td>
+  </tbody>
+</table>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Run
 
-### `npm run build`
+First, start by cloning the repository:
+```shell
+git clone https://github.com/shunny2/react-materialui/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the command below to install all dependencies:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run the application (frontend):
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And finally, open a new terminal and run the json-server to make requests with test data.
+```bash
+npm run json-server
+```
 
-### `npm run eject`
+Your application will be available at: [SignIn](http://localhost:3000/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Your API will be available at: [Json-server](http://localhost:3333/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Status
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Status: Developing.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<hr/>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">Created by <a href="https://github.com/shunny2"><b>Alexander Davis</b></a>.</p>
