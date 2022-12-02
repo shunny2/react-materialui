@@ -4,7 +4,7 @@
       "id": 1,
       "fullName": "Cleiton Rasta",
       "email": "Cleiton_rasta@gmail.com",
-      "cityId": 1
+      "cityId": 6
     },
     {
       "id": 2,
@@ -89,6 +89,12 @@
       "fullName": "Jeferson Rasta",
       "email": "Jeferson_rasta@gmail.com",
       "cityId": 3
+    },
+    {
+      "fullName": "Alexander Davis",
+      "email": "Alexander_davis@gmail.com",
+      "cityId": 18,
+      "id": 18
     }
   ],
   "cities": [

@@ -4,9 +4,10 @@ import { Grid, LinearProgress, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import * as yup from 'yup';
 
-import { DetailsToolbar } from '../../shared/components';
 import { BaseLayout } from '../../shared/layouts';
 import { PeopleService } from '../../shared/services/api/people/PeopleService';
+import { DetailsToolbar } from '../../shared/components';
+import { CityAutocomplete } from './components/CityAutocomplete';
 import { VTextField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
 
 interface IFormData {
@@ -57,7 +58,7 @@ export const DetailsPeople = () => {
       formRef.current?.setData({
         fullName: '',
         email: '',
-        cityId: ''
+        cityId: undefined
       });
     }
   }, [id]);
@@ -177,12 +178,7 @@ export const DetailsPeople = () => {
 
             <Grid container item direction='row' spacing={2}>
               <Grid item xs={12} sm={8} md={6} lg={4}>
-                <VTextField
-                  fullWidth
-                  label='City'
-                  name='cityId'
-                  disabled={isLoading}
-                />
+                <CityAutocomplete isExternalLoading={isLoading} />
               </Grid>
             </Grid>
 
