@@ -13,8 +13,8 @@
 ![gif](https://user-images.githubusercontent.com/72872854/205369416-5ea01006-5dc2-4a96-b962-7f5262404e47.gif)
 
 <p align="center">
-<a href="https://img.shields.io/github/watchers/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/watchers/shunny2/react-materialui?style=social" alt="Watchers"/></a>
-<a href="https://img.shields.io/github/stars/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?style=social" alt="Repo Stars"/></a>
+<a href="https://img.shields.io/github/stars/shunny2/react-materialui?label=Watchers&style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?label=Watchers&style=social" alt="Watchers" /></a>
+<a href="https://img.shields.io/github/stars/shunny2/react-materialui?label=Stars&style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?label=Stars&style=social" alt="Repo Stars" /></a>
 <a href="https://img.shields.io/github/license/shunny2/react-materialui"><img src="https://img.shields.io/github/license/shunny2/react-materialui" alt="License"/></a>
 </p>
 
