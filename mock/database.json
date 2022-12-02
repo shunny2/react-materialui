@@ -162,5 +162,8 @@
       "name": "São João da Boa Vista",
       "id": 18
     }
-  ]
+  ],
+  "auth": {
+    "accessToken": "n2k1jn4i214nk2j4nk24"
+  }
 }
