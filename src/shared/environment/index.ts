@@ -14,5 +14,9 @@ export const Environment = {
   /**
    * URL of the project's database query base.
    */
-  BASE_URL: 'http://localhost:3333'
+  BASE_URL: 'http://localhost:3333/api/v1',
+  /**
+   * URL of the project's database query base.
+   */
+  JSON_SERVER_BASE_URL: 'http://localhost:3334'
 };
