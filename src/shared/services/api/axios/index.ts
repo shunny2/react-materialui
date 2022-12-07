@@ -7,9 +7,13 @@ const Api = axios.create({
   baseURL: Environment.BASE_URL
 });
 
+const JsonServerApi = axios.create({
+  baseURL: Environment.JSON_SERVER_BASE_URL
+});
+
 Api.interceptors.response.use(
   (response) => ResponseInterceptor(response),
   (error) => errorInterceptor(error),
 );
 
-export { Api };
+export { Api, JsonServerApi };
