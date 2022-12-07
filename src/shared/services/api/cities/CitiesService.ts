@@ -1,5 +1,5 @@
 import { Environment } from '../../../environment';
-import { Api } from '../axios';
+import { JsonServerApi } from '../axios';
 
 export interface ICitiesListing {
   id: number;
@@ -19,7 +19,7 @@ type TCitiesWithTotalCount = {
 const getAll = async (page = 1, filter = '', id = ''): Promise<TCitiesWithTotalCount | Error> => {
   try {
     const relativeUrl = `/cities?_page=${page}&_limit=${Environment.LINE_LIMIT}&name_like=${filter}&id_like=${id}`;
-    const { data, headers } = await Api.get(relativeUrl);
+    const { data, headers } = await JsonServerApi.get(relativeUrl);
 
     if (data)
       return { data, totalCount: Number(headers['x-total-count'] || Environment.LINE_LIMIT) };
@@ -32,7 +32,7 @@ const getAll = async (page = 1, filter = '', id = ''): Promise<TCitiesWithTotalC
 
 const getById = async (id: number): Promise<ICitiesDetails | Error> => {
   try {
-    const { data } = await Api.get(`/cities/${id}`);
+    const { data } = await JsonServerApi.get(`/cities/${id}`);
 
     if (data)
       return data;
@@ -45,7 +45,7 @@ const getById = async (id: number): Promise<ICitiesDetails | Error> => {
 
 const create = async (cityData: Omit<ICitiesDetails, 'id'>): Promise<number | Error> => {
   try {
-    const { data } = await Api.post<ICitiesDetails>('/cities', cityData);
+    const { data } = await JsonServerApi.post<ICitiesDetails>('/cities', cityData);
 
     if (data)
       return data.id;
@@ -58,7 +58,7 @@ const create = async (cityData: Omit<ICitiesDetails, 'id'>): Promise<number | Er
 
 const updateById = async (id: number, cityData: ICitiesDetails): Promise<void | Error> => {
   try {
-    await Api.put(`/cities/${id}`, cityData);
+    await JsonServerApi.put(`/cities/${id}`, cityData);
   } catch (error) {
     return new Error((error as { message: string }).message || 'Error updating record.');
   }
@@ -66,7 +66,7 @@ const updateById = async (id: number, cityData: ICitiesDetails): Promise<void | 
 
 const deleteById = async (id: number): Promise<void | Error> => {
   try {
-    await Api.delete(`/cities/${id}`);
+    await JsonServerApi.delete(`/cities/${id}`);
   } catch (error) {
     return new Error((error as { message: string }).message || 'Error deleting the record.');
   }
