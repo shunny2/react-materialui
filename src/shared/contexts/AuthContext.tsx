@@ -31,16 +31,17 @@ export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const isAuthenticated = useMemo(() => !!accessToken, [accessToken]);
 
   const handleSignIn = useCallback(async (userData: IUserAuthProps) => {
-    const result = await AuthService.auth(userData);
+    const result = await AuthService.signIn(userData);
 
     if (result instanceof Error)
-      return result.message;
+      return alert(result.message);
     
-    localStorage.setItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN, JSON.stringify(result.accessToken));
-    setAccessToken(result.accessToken);
+    localStorage.setItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN, JSON.stringify(result.token));
+    setAccessToken(result.token);
   }, []);
 
-  const handleLogout = useCallback(() => {
+  const handleLogout = useCallback(async () => {
+    await AuthService.logout();
     localStorage.removeItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
     setAccessToken(undefined);
   }, []);
