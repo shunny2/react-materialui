@@ -7,7 +7,7 @@ import {
   ListingCities, 
   ListingPeople, 
   DetailsCities, 
-  DetailsPeople 
+  DetailsPeople
 } from '../pages';
 
 export const AppRoutes = () => {
