@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react';
 import { Box } from '@mui/system';
-import { Button, Card, CardActions, CardContent, CircularProgress, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CircularProgress, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as yup from 'yup';
 
 import { useAuthContext } from '../../contexts';
@@ -84,7 +84,7 @@ export const SignIn = ({ children }: ISignInProps) => {
         <Card>
           <CardContent>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: smDown ? 300 : 600, height: 220 }}>
-              <Typography variant='h6' align='center'>Login</Typography>
+              <Typography variant='h6' align='center' fontWeight='bold'>Login</Typography>
 
               <VTextField
                 fullWidth
@@ -103,7 +103,7 @@ export const SignIn = ({ children }: ISignInProps) => {
               />
             </Box>
           </CardContent>
-          <CardActions>
+          <CardActions sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
               <Button
                 type='submit'
@@ -114,6 +114,10 @@ export const SignIn = ({ children }: ISignInProps) => {
                 Log in
               </Button>
             </Box>
+
+            <Link href="/register" underline="none" fontWeight='bold'>
+              {'Dont have an account? Create'}
+            </Link>
           </CardActions>
         </Card>
       </VForm>
