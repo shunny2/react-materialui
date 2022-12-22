@@ -115,7 +115,7 @@ export const SignIn = ({ children }: ISignInProps) => {
               </Button>
             </Box>
 
-            <Link href="/register" underline="none" fontWeight='bold'>
+            <Link href="/register" underline="none" fontWeight='bold' color='lightgray'>
               {'Dont have an account? Create'}
             </Link>
           </CardActions>
