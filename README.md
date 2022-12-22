@@ -29,7 +29,7 @@ Web application to build an administrative panel from scratch using react and ty
   </thead>
   <tbody>
     <td>
-      <a href="https://nodejs.org/en/" title="React"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React logo image." /></a>
+      <a href="https://reactjs.org/" title="React"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React logo image." /></a>
     </td>
     <td>
       <a href="https://www.typescriptlang.org/" title="TypeScript"><img width="128" height="128" src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg" alt="Typescript logo image." /></a>
