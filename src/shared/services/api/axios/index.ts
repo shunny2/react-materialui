@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Environment } from '../../../environment';
 import { errorInterceptor, ResponseInterceptor } from './interceptors';
 
+// Instances
 const Api = axios.create({
   baseURL: Environment.BASE_URL
 });
@@ -11,7 +12,13 @@ const JsonServerApi = axios.create({
   baseURL: Environment.JSON_SERVER_BASE_URL
 });
 
+// Interceptors
 Api.interceptors.response.use(
+  (response) => ResponseInterceptor(response),
+  (error) => errorInterceptor(error),
+);
+
+JsonServerApi.interceptors.response.use(
   (response) => ResponseInterceptor(response),
   (error) => errorInterceptor(error),
 );

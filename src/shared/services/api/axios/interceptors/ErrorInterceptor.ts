@@ -10,5 +10,11 @@ export const errorInterceptor = (error: AxiosError) => {
     return Promise.reject(new Error('Unauthorized.'));
   }
 
+  if (error.response?.status === 403) {
+    // Go to login page (window.location.href = Login)
+    window.location.href = '/home';
+    return Promise.reject(new Error('Forbbiden.'));
+  }
+
   return Promise.reject(error);
 };
