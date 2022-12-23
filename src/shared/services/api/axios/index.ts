@@ -1,6 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 import { Environment } from '../../../environment';
+import { getCookie } from '../../../utils';
 import { errorInterceptor, ResponseInterceptor } from './interceptors';
 
 // Instances
@@ -14,11 +15,6 @@ const JsonServerApi = axios.create({
 
 // Interceptors
 Api.interceptors.response.use(
-  (response) => ResponseInterceptor(response),
-  (error) => errorInterceptor(error),
-);
-
-JsonServerApi.interceptors.response.use(
   (response) => ResponseInterceptor(response),
   (error) => errorInterceptor(error),
 );
