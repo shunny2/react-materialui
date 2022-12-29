@@ -39,7 +39,7 @@ const refresh = async (): Promise<IAuth | Error> => {
 
 const logout = async (): Promise<void | Error> => {
   try {
-    await Api.get<void | Error>('/auth/logout', {
+    await Api.post<void | Error>('/auth/logout', {
       withCredentials: true
     });
   } catch (error) {
