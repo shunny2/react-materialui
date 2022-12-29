@@ -1,7 +1,6 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 import { Environment } from '../../../environment';
-import { getCookie } from '../../../utils';
 import { errorInterceptor, ResponseInterceptor } from './interceptors';
 
 // Instances
