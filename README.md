@@ -6,6 +6,8 @@
   <a href="#how-to-run">How to Run</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="project-status">Project Status</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>
 </p>
 
 </br>
@@ -13,14 +15,14 @@
 ![gif](https://user-images.githubusercontent.com/72872854/205369416-5ea01006-5dc2-4a96-b962-7f5262404e47.gif)
 
 <p align="center">
-<a href="https://img.shields.io/github/stars/shunny2/react-materialui?label=Watchers&style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?label=Watchers&style=social" alt="Watchers" /></a>
-<a href="https://img.shields.io/github/stars/shunny2/react-materialui?label=Stars&style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?label=Stars&style=social" alt="Repo Stars" /></a>
-<a href="https://img.shields.io/github/license/shunny2/react-materialui"><img src="https://img.shields.io/github/license/shunny2/react-materialui" alt="License"/></a>
+  <a href="https://img.shields.io/github/stars/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?style=social" alt="Repo Stars" /></a>
+  <a href="https://img.shields.io/github/forks/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/forks/shunny2/react-materialui?style=social" alt="Forks" /></a>
+  <a href="https://img.shields.io/github/license/shunny2/react-materialui"><img src="https://img.shields.io/github/license/shunny2/react-materialui" alt="License"/></a>
 </p>
 
 ## About Application
 
-Web application to build an administrative panel from scratch using react and typescript.
+Web application to build an administrative panel from scratch using React, Typescript, and Mui.
 
 ## Technologies
 
@@ -57,18 +59,22 @@ Run the application (frontend):
 npm start
 ```
 
-And finally, open a new terminal and run the json-server to make requests with test data.
+And finally, open a new terminal and run the JSON server to make requests with test data.
 ```bash
 npm run json-server
 ```
 
-Your application will be available at: [SignIn](http://localhost:3000/)
+Your application will be available at [SignIn](http://localhost:3000/)
 
-Your API will be available at: [Json-server](http://localhost:3333/)
+Your API will be available at [Json-server](http://localhost:3333/)
 
 ## Project Status
 
-> Status: Developing.
+> Status: Completed.
+
+## License
+
+This project is under an [MIT](https://opensource.org/licenses/MIT) license.
 
 <hr/>
 
