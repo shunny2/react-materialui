@@ -17,12 +17,12 @@
 <p align="center">
   <a href="https://img.shields.io/github/stars/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/stars/shunny2/react-materialui?style=social" alt="Repo Stars" /></a>
   <a href="https://img.shields.io/github/forks/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/forks/shunny2/react-materialui?style=social" alt="Forks" /></a>
-  <a href="https://img.shields.io/github/license/shunny2/react-materialui"><img src="https://img.shields.io/github/license/shunny2/react-materialui" alt="License"/></a>
+  <a href="https://img.shields.io/github/license/shunny2/react-materialui?style=social"><img src="https://img.shields.io/github/license/shunny2/react-materialui?style=social" alt="License"/></a>
 </p>
 
 ## About Application
 
-Web application to build an administrative panel from scratch using React, Typescript, and Mui.
+Web application to build an administrative panel from scratch using [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), and [Mui](https://mui.com/).
 
 ## Technologies
 
